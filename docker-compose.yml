@@ -1,0 +1,14 @@
+version: '3'
+services: 
+    cuda:
+        build: .
+        container_name: 'cuda'
+        volumes: 
+            - .:/users
+        stdin_open: true # docker run -i らしい
+        tty: true        # docker run -t らしい
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - capabilities: [gpu]

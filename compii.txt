@@ -1,0 +1,1 @@
+nvcc -arch=sm_50 --std=c++14 test.cu
